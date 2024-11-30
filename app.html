@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV to VCF Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f9f9f9;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+        }
+        input[type="file"] {
+            margin: 15px 0;
+        }
+        button {
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .progress-bar {
+            margin-top: 15px;
+            height: 20px;
+            background-color: #28a745;
+            color: white;
+            text-align: center;
+            width: 0%;
+        }
+        .result {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CSV to VCF Converter</h1>
+        <label>
+            <input type="radio" name="mode" value="csv_to_vcf" checked> CSV to VCF
+        </label>
+        <label>
+            <input type="radio" name="mode" value="vcf_to_vcf_500"> VCF (Split 500)
+        </label>
+        <input type="file" id="inputFiles" accept=".csv,.vcf" multiple>
+        <button onclick="convertFiles()">Convert</button>
+        <div class="progress-bar" id="progress-bar"></div>
+        <div id="file-result" class="result"></div>
+    </div>
+    <div class="container">
+        <button onclick="logout()">Logout</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
