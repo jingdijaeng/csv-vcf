@@ -46,7 +46,7 @@ function convertFiles() {
 
     updateResultMessage('กำลังแปลงไฟล์...');
 
-    fetch('https://goodmoodgoodcafe.com:5000/csv-vcf/convert', {
+    fetch('/csv-vcf/convert', {
         method: 'POST',
         body: formData,
     })
